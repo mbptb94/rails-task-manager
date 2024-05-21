@@ -1,0 +1,21 @@
+<h2><%= @task.title %></h2>
+<p><%= @task.details %></p>
+<%# checkbox %>
+<div>
+  <label>
+    <input type="checkbox" id="chekIfComplete" name="complete" value="" />
+   
+    This task is not completed yet
+
+  </label>
+</div>
+<%# lien pour delete la task %>
+<div>
+  <%= link_to "Delete", task_path(@task),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+</div>
+<%# lien pour editer la tache %>
+<div>
+  <%= link_to "Edit task", task_edit_path(@task) %>
+</div>
